@@ -1,19 +1,15 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from './Components/Navbar';
+import { Grid2 } from '@mui/material';
 
 function Routing() {
     return (
-        // <DashboardProvider>
         <BrowserRouter>
-            {/* <ScrollTop /> */}
-            {/* <PageTitleUpdater /> */}
-            <Suspense>
-                <Routes>
-                    {/* <Route path="/forgotpassword" element={<ForgotPassword />} /> */}
-                </Routes>
-            </Suspense>
+            <Routes>
+                <Route path="/navbar" element={<Navbar />} />
+            </Routes>
         </BrowserRouter>
-        // </DashboardProvider>
     );
 }
 
