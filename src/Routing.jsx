@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from './Components/Navbar';
-import { Grid2 } from '@mui/material';
 
 function Routing() {
     return (
