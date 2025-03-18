@@ -1,0 +1,13 @@
+:root {
+  --primaryColor: "#FFECEC";
+  --primaryDarkColor: #ff4646;
+  --cardBackgroundColor: #1C1C1C;
+  --borderColor: gray;
+  --warningColor: red;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--backgroudColor);
+}
