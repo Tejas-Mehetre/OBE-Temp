@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import navLinks from "../Data/navLinks"
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("Home");
   const isHidden = useMediaQuery("(max-width: 960px)");
   const isSmallScreen = useMediaQuery("(max-width: 1400px)");
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const Navbar = () => {
   };
 
   const handleClick = (item) => {
-    setActiveLink(item.link);
+    setActiveLink(item.url);
     navigate(item.url.startsWith("/") ? item.url : `/${item.url}`);
   };
 
@@ -90,7 +90,7 @@ const Navbar = () => {
         >
           <Box
             component="img"
-            src="/public/LogoLight.png"
+            src="/LogoLight.png"
             alt="Logo"
             sx={{
               height: "4rem",
@@ -139,7 +139,7 @@ const Navbar = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box
             component="img"
-            src="/public/LogoIcon.png"
+            src="/LogoIcon.png"
             alt="Logo"
             sx={{
               height: { md: "1.5rem", lg: "2rem" },
@@ -150,7 +150,7 @@ const Navbar = () => {
           />
           <Box
             component="img"
-            src="/public/LogoLight.png"
+            src="/LogoLight.png"
             alt="Logo"
             sx={{
               height: { md: "4rem", lg: "5rem" },
@@ -176,14 +176,11 @@ const Navbar = () => {
                 style={{
                   position: "relative",
                   textDecoration: "none",
-                  // color: activeLink === item.link ? "#E7B01B" : "#000",
                   fontSize: "0.9rem",
                   transition: "color 0.3s, font-size 0.3s ease-in-out",
                   paddingBottom: "5px",
                   display: "inline-block",
                   letterSpacing: "1px",
-                  // fontWeight: activeLink === item.link ? "bold" : "normal",
-                  // margin: "0 6px",
                 }}
               >
                 {item.name}
