@@ -5,6 +5,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import navLinks from "../Data/navLinks"
+import LogoIcon from "/LogoIcon.png"
+import LogoLight from "/LogoLight.png"
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("Home");
@@ -20,7 +22,7 @@ const Navbar = () => {
           <Button
             variant="outlined"
             sx={{
-              width: { lg: "180px", md: "150px" },
+              width: { lg: "180px", xs: "150px" },
               height: "40px",
               color: "var(--primaryDarkColor)",
               border: "solid var(--primaryDarkColor) 2px",
@@ -34,7 +36,7 @@ const Navbar = () => {
           </Button>
           <Button
             sx={{
-              width: { lg: "180px", md: "150px" },
+              width: { lg: "180px", xs: "150px" },
               height: "40px",
               borderRadius: "50px",
               backgroundColor: "var(--primaryDarkColor)",
@@ -90,7 +92,7 @@ const Navbar = () => {
         >
           <Box
             component="img"
-            src="/LogoLight.png"
+            src={LogoLight}
             alt="Logo"
             sx={{
               height: "4rem",
@@ -139,7 +141,7 @@ const Navbar = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box
             component="img"
-            src="/LogoIcon.png"
+            src={LogoIcon}
             alt="Logo"
             sx={{
               height: { md: "1.5rem", lg: "2rem" },
@@ -150,7 +152,7 @@ const Navbar = () => {
           />
           <Box
             component="img"
-            src="/LogoLight.png"
+            src={LogoLight}
             alt="Logo"
             sx={{
               height: { md: "4rem", lg: "5rem" },

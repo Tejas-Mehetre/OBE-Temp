@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import Grid from "@mui/material/Grid2";
 import { Box, IconButton, List, ListItem, ListItemText, Typography } from '@mui/material';
-import LogoIcon from "../../public/LogoIcon.png"
-import Logo from "../../public/LogoDark.png"
+import LogoIcon from "/LogoIcon.png"
+import Logo from "/LogoDark.png"
 import  navLinks  from '../Data/navLinks';
-import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Language, Twitter } from '@mui/icons-material';
 
 
