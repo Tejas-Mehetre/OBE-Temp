@@ -1,15 +1,23 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import ContactUs from "./Pages/ContactUs";
+import Services from "./Pages/Services";
+import Faq from "./Pages/Faq";
+import Layout from "./Shared/Layout";
 
-function Routing() {
+const Routing = () => {
     return (
-        <BrowserRouter>
+        <Router>
             <Routes>
-                <Route path="/navbar" element={<Navbar />} />
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="ContactUs" element={<ContactUs />} />
+                    <Route path="Services" element={<Services />} />
+                    <Route path="Faq" element={<Faq />} />
+                </Route>
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
-}
+};
 
 export default Routing;
