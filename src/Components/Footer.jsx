@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Grid from "@mui/material/Grid2";
 import { Box, IconButton, List, ListItem, ListItemText, Typography } from '@mui/material';
 import LogoIcon from "../../public/LogoIcon.png"
-import LogoLight from "../../public/LogoLight.png"
+import Logo from "../../public/LogoDark.png"
 import  navLinks  from '../Data/navLinks';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Language, Twitter } from '@mui/icons-material';
@@ -42,7 +42,7 @@ const Footer = () => {
         
         <Box sx={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
           <Box component="img" src={LogoIcon} sx={{ width:{xs:"2rem", md:"2rem"} }} />
-          <Box component="img" src={LogoLight} sx={{ width: {xs:"15rem",md:"20rem"} }} />
+          <Box component="img" src={Logo} sx={{ width: {xs:"15rem",md:"20rem"} }} />
         </Box>
 
       
