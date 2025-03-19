@@ -58,7 +58,7 @@ const Navbar = () => {
   const handleClick = (item) => {
     setActiveLink(item.link);
     navigate(item.url.startsWith("/") ? item.url : `/${item.url}`);
-  };  
+  };
 
   if (isHidden) return (
     <>
@@ -176,13 +176,13 @@ const Navbar = () => {
                 style={{
                   position: "relative",
                   textDecoration: "none",
-                  color: activeLink === item.link ? "#E7B01B" : "#000",
+                  // color: activeLink === item.link ? "#E7B01B" : "#000",
                   fontSize: "0.9rem",
                   transition: "color 0.3s, font-size 0.3s ease-in-out",
                   paddingBottom: "5px",
                   display: "inline-block",
                   letterSpacing: "1px",
-                  fontWeight: activeLink === item.link ? "bold" : "normal",
+                  // fontWeight: activeLink === item.link ? "bold" : "normal",
                   // margin: "0 6px",
                 }}
               >
@@ -194,7 +194,7 @@ const Navbar = () => {
                     bottom: 0,
                     width: "100%",
                     height: "2px",
-                    backgroundColor: activeLink === item.link ? "#E7B01B" : "transparent",
+                    backgroundColor: activeLink === item.link ? "var(--primaryDarkColor)" : "transparent",
                     transition: "background-color 0.3s ease-in-out",
                     fontFamily: '"Montserrat", "Sans-serif"',
                     fontWeight: "500",

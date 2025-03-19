@@ -1,9 +1,12 @@
 import React from 'react'
+import { Box } from '@mui/material'
 
 function Home() {
   return (
     <>
-      Home
+      <Box sx={{ marginTop: "100px" }}>
+        Home
+      </Box>
     </>
   )
 }

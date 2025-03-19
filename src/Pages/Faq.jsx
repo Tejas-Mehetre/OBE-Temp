@@ -1,9 +1,12 @@
 import React from 'react'
+import { Box } from '@mui/material'
 
 function Faq() {
   return (
     <>
-      FAQ
+      <Box sx={{ marginTop: "100px" }}>
+        FAQ
+      </Box>
     </>
   )
 }
