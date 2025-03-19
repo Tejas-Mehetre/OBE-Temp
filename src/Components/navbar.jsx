@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   const handleClick = (item) => {
-    setActiveLink(item.url);
+    setActiveLink(item.link);
     navigate(item.url.startsWith("/") ? item.url : `/${item.url}`);
   };
 
