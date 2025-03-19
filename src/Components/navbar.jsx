@@ -1,81 +1,65 @@
 import React, { useState } from "react";
 import { Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useMediaQuery } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
- 
+import navLinks from "../Data/navLinks"
+
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("");
-  const isHidden = useMediaQuery((theme) => theme.breakpoints.down("md"));
-//   const isSmallScreen = useMediaQuery("(max-width: 1400px)");
+  const isHidden = useMediaQuery("(max-width: 960px)");
+  const isSmallScreen = useMediaQuery("(max-width: 1400px)");
   const navigate = useNavigate();
-//   const { adminSite } = useRdxState();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    { name: <>Home</>, link: "#HowItWork", url: "HowItWork" },
-    { name: <>About Us</>, link: "#faqs", url: "https://knowledge.realtyconnect.com/" },
-    { name: <>SUCCESS {isSmallScreen ? <></> : <br />} GUARANTEE</>, link: "#SuccessGuarntee", url: "SuccessGuarntee" },
-    { name: <>TRAINING & {isSmallScreen ? <></> : <br />} SUPPORT</>, link: "#TrainingAndSupport", url: "TrainingAndSupport" },
-    { name: <>WEBSITES & {isSmallScreen ? <></> : <br />} MARKETING</>, link: "#WebsiteAndMarketing", url: "WebsiteAndMarketing" },
-    { name: <>SUBMIT A {isSmallScreen ? <></> : <br />} REFERRAL</>, link: "#SubmitRefferals", url: "SubmitRefferals" },
-  ];
- 
   const Buttons = () => {
     return (
       <>
-        <Box sx={{ display: "flex", flexDirection: isSmallScreen ? "column" : "row", gap: isSmallScreen ? 2.5 : 3.5 }}>
+        <Box sx={{ display: "flex", flexDirection: isHidden ? "column" : "row", gap: isSmallScreen ? 1.5 : 2.5, alignItems: "center", marginLeft: "200" }}>
           <Button
+            variant="outlined"
             sx={{
-              width: "7rem",
-              fontSize: isSmallScreen ? "clamp(0.75rem, 1vw, 1rem)" : "1rem",
-              backgroundColor: "#E7B01B",
-              color: "white",
-              marginLeft: isSmallScreen ? "15px" : "0px"
-            }}
-            onClick={() => {
-              window.open(`${import.meta.env.VITE_APP_SITE_URL}/join/?sponsorUUId=${adminSite.sponsorUUID}&teamId=${adminSite.id}`,)
+              width: { lg: "180px", md: "150px" },
+              height: "40px",
+              color: "var(--primaryDarkColor)",
+              border: "solid var(--primaryDarkColor) 2px",
+              borderRadius: "50px",
+              marginLeft: isSmallScreen ? "15px" : "0px",
+              // fontFamily:"BR Sonoma",
+              textTransform: "none",
             }}
           >
-            AGENT {isSmallScreen ? <></> : <br />} LOGIN
+            Login
           </Button>
           <Button
             sx={{
-              width: "7rem",
-              fontSize: isSmallScreen ? "clamp(0.75rem, 1vw, 1rem)" : "1rem",
-              backgroundColor: "#62AD53",
+              width: { lg: "180px", md: "150px" },
+              height: "40px",
+              borderRadius: "50px",
+              backgroundColor: "var(--primaryDarkColor)",
               color: "white",
-              marginLeft: isSmallScreen ? "15px" : "0px"
+              marginLeft: isSmallScreen ? "15px" : "0px",
+              // fontFamily:"BR Sonoma",
+              textTransform: "none",
             }}
-           onClick={()=>{
-            navigation("subcription")
-           }}
-
           >
-            JOIN {isSmallScreen ? <></> : <br />} TODAY
+            Request a Quote
           </Button>
         </Box>
       </>
     )
   }
- 
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
- 
+
   const handleClick = (item) => {
-    setActiveLink(item.link)
- 
-    if (item.link == "#faqs") {
-      window.open(item.url, "_blank")
- 
-    }
-    else {
-      navigate(item.url);
-    }
-  }
- 
+    setActiveLink(item.link);
+    navigate(item.url.startsWith("/") ? item.url : `/${item.url}`);
+  };  
+
   if (isHidden) return (
     <>
       <IconButton
@@ -85,9 +69,9 @@ const Navbar = () => {
         onClick={handleDrawerToggle}
         sx={{ position: "fixed", top: 10, left: 10, zIndex: 1100 }}
       >
-        <MenuIcon sx={{ fontSize: 32, color: "white" }} />
+        <MenuIcon sx={{ fontSize: 32 }} />
       </IconButton>
- 
+
       <Drawer
         anchor="left"
         open={mobileOpen}
@@ -106,11 +90,11 @@ const Navbar = () => {
         >
           <Box
             component="img"
-            src={adminSite.primaryLogo}
+            src="/public/LogoLight.png"
             alt="Logo"
             sx={{
-              height: "3rem",
-              width: "10rem",
+              height: "4rem",
+              width: "13rem",
               cursor: "pointer",
             }}
           />
@@ -118,7 +102,7 @@ const Navbar = () => {
             <CloseIcon />
           </IconButton>
         </Box>
- 
+
         <List>
           {navLinks.map((item, index) => (
             <ListItem sx={{ cursor: "pointer" }} button key={index} onClick={() => { handleClick(item); handleDrawerToggle(); }}>
@@ -130,15 +114,16 @@ const Navbar = () => {
       </Drawer>
     </>
   );
- 
- 
+
+
   return (
     <Box sx={{
       position: "fixed",
       width: "100%",
-      letf: 0,
+      left: 0,
       top: 0,
-      zIndex: "1000"
+      zIndex: "1000",
+      paddingTop: "10px"
     }}>
       <Box
         sx={{
@@ -149,28 +134,30 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
- 
         }}
       >
-        <Box
-          component="img"
-          src="/public/LogoLight.png"
-          alt="Logo"
-          sx={{
-            height: "5.5rem",
-            cursor: "pointer",
-            paddingTop: 4,
-            paddingBottom: 4,
-          }}
-        />
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: isSmallScreen ? 2 : 3,
-          }}
-        >
- 
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box
+            component="img"
+            src="/public/LogoIcon.png"
+            alt="Logo"
+            sx={{
+              height: { md: "1.5rem", lg: "2rem" },
+              cursor: "pointer",
+              marginRight: "10px",
+              marginBottom: "10px"
+            }}
+          />
+          <Box
+            component="img"
+            src="/public/LogoLight.png"
+            alt="Logo"
+            sx={{
+              height: { md: "4rem", lg: "5rem" },
+              cursor: "pointer",
+              marginBottom: "10px"
+            }}
+          />
           <Box
             component="nav"
             sx={{
@@ -178,7 +165,8 @@ const Navbar = () => {
               display: "flex",
               justifyContent: "center",
               gap: isSmallScreen ? 1.5 : 4,
-              textAlign: "center",
+              alignItems: "center",
+              marginLeft: "30px"
             }}
           >
             {navLinks.map((item, index) => (
@@ -189,14 +177,13 @@ const Navbar = () => {
                   position: "relative",
                   textDecoration: "none",
                   color: activeLink === item.link ? "#E7B01B" : "#000",
-                  fontSize: isSmallScreen ? "clamp(0.75rem, 1vw, 1rem)" : "1rem",
+                  fontSize: "0.9rem",
                   transition: "color 0.3s, font-size 0.3s ease-in-out",
                   paddingBottom: "5px",
                   display: "inline-block",
                   letterSpacing: "1px",
                   fontWeight: activeLink === item.link ? "bold" : "normal",
-                  margin: "0 6px",
- 
+                  // margin: "0 6px",
                 }}
               >
                 {item.name}
@@ -211,7 +198,6 @@ const Navbar = () => {
                     transition: "background-color 0.3s ease-in-out",
                     fontFamily: '"Montserrat", "Sans-serif"',
                     fontWeight: "500",
-                    fontFamily: '"Montserrat", "Sans-serif"',
                     fontSize: "15px",
                     textTransform: "uppercase",
                     textDecoration: "none",
@@ -221,13 +207,21 @@ const Navbar = () => {
               </a>
             ))}
           </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: isHidden ? "left" : "center",
+            gap: isSmallScreen ? 2 : 3,
+          }}
+        >
           <Buttons />
         </Box>
       </Box>
     </Box>
   );
 };
- 
+
 export default Navbar;
- 
- 
+
+
