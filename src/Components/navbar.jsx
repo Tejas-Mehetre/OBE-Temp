@@ -108,7 +108,7 @@ const Navbar = () => {
         <List>
           {navLinks.map((item, index) => (
             <ListItem sx={{ cursor: "pointer" }} button key={index} onClick={() => { handleClick(item); handleDrawerToggle(); }}>
-              <ListItemText sx={{ color: activeLink === item.link ? "#E7B01B" : "#000" }} primary={item.name} />
+              <ListItemText sx={{ color: activeLink === item.link ? "var(--primaryDarkColor)" : "#000" }} primary={item.name} />
             </ListItem>
           ))}
           <Buttons />
@@ -125,7 +125,6 @@ const Navbar = () => {
       left: 0,
       top: 0,
       zIndex: "1000",
-      paddingTop: "10px"
     }}>
       <Box
         sx={{
