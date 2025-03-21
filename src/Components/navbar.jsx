@@ -1,24 +1,40 @@
 import React, { useState } from "react";
-import { Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import navLinks from "../Data/navLinks"
-import LogoIcon from "/LogoIcon.png"
-import LogoLight from "/LogoLight.png"
+import navLinks from "../Data/navLinks";
+import LogoIcon from "/LogoIcon.png";
+import LogoLight from "/LogoLight.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState("Home");
   const isHidden = useMediaQuery("(max-width: 960px)");
   const isSmallScreen = useMediaQuery("(max-width: 1400px)");
-  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const Buttons = () => {
     return (
       <>
-        <Box sx={{ display: "flex", flexDirection: isHidden ? "column" : "row", gap: isSmallScreen ? 1.5 : 2.5, alignItems: "center", marginLeft: "200" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isHidden ? "column" : "row",
+            gap: isSmallScreen ? 1.5 : 2.5,
+            alignItems: "center",
+            marginLeft: "200",
+          }}
+        >
           <Button
             variant="outlined"
             sx={{
@@ -30,6 +46,9 @@ const Navbar = () => {
               marginLeft: isSmallScreen ? "15px" : "0px",
               // fontFamily:"BR Sonoma",
               textTransform: "none",
+            }}
+            onClick={() => {
+              navigate("/Login");
             }}
           >
             Login
@@ -45,13 +64,16 @@ const Navbar = () => {
               // fontFamily:"BR Sonoma",
               textTransform: "none",
             }}
+            onClick={() => {
+              navigate("/RequestAQuote");
+            }}
           >
             Request a Quote
           </Button>
         </Box>
       </>
-    )
-  }
+    );
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -62,70 +84,92 @@ const Navbar = () => {
     navigate(item.url.startsWith("/") ? item.url : `/${item.url}`);
   };
 
-  if (isHidden) return (
-    <>
-      <IconButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        onClick={handleDrawerToggle}
-        sx={{ position: "fixed", top: 10, left: 10, zIndex: 1100 }}
-      >
-        <MenuIcon sx={{ fontSize: 32 }} />
-      </IconButton>
+  if (isHidden)
+    return (
+      <>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={handleDrawerToggle}
+          sx={{ position: "fixed", top: 10, left: 10, zIndex: 1100 }}
+        >
+          <MenuIcon sx={{ fontSize: 32 }} />
+        </IconButton>
 
-      <Drawer
-        anchor="left"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{
-          "& .MuiDrawer-paper": { width: "250px", backgroundColor: "#fff", padding: "10px" },
-        }}
-      >
-        <Box
+        <Drawer
+          anchor="left"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "10px",
+            "& .MuiDrawer-paper": {
+              width: "250px",
+              backgroundColor: "#fff",
+              padding: "10px",
+            },
           }}
         >
           <Box
-            component="img"
-            src={LogoLight}
-            alt="Logo"
             sx={{
-              height: "4rem",
-              width: "13rem",
-              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "10px",
             }}
-          />
-          <IconButton onClick={handleDrawerToggle} sx={{ p: 1 }}>
-            <CloseIcon />
-          </IconButton>
-        </Box>
+          >
+            <Box
+              component="img"
+              src={LogoLight}
+              alt="Logo"
+              sx={{
+                height: "4rem",
+                width: "13rem",
+                cursor: "pointer",
+              }}
+            />
+            <IconButton onClick={handleDrawerToggle} sx={{ p: 1 }}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
 
-        <List>
-          {navLinks.map((item, index) => (
-            <ListItem sx={{ cursor: "pointer" }} button key={index} onClick={() => { handleClick(item); handleDrawerToggle(); }}>
-              <ListItemText sx={{ color: activeLink === item.link ? "var(--primaryDarkColor)" : "#000" }} primary={item.name} />
-            </ListItem>
-          ))}
-          <Buttons />
-        </List>
-      </Drawer>
-    </>
-  );
-
+          <List>
+            {navLinks.map((item, index) => (
+              <ListItem
+                sx={{ cursor: "pointer" }}
+                button
+                key={index}
+                onClick={() => {
+                  handleClick(item);
+                  handleDrawerToggle();
+                }}
+              >
+                <ListItemText
+                  sx={{
+                    color:
+                      activeLink === item.link
+                        ? "var(--primaryDarkColor)"
+                        : "#000",
+                  }}
+                  primary={item.name}
+                />
+              </ListItem>
+            ))}
+            <Buttons />
+          </List>
+        </Drawer>
+      </>
+    );
 
   return (
-    <Box sx={{
-      position: "fixed",
-      width: "100%",
-      left: 0,
-      top: 0,
-      zIndex: "1000",
-    }}>
+    <Box
+      sx={{
+        position: "fixed",
+        width: "100%",
+        left: 0,
+        top: 0,
+        zIndex: "1000",
+      }}
+    >
       <Box
         sx={{
           margin: "auto",
@@ -146,7 +190,7 @@ const Navbar = () => {
               height: { md: "1.5rem", lg: "2rem" },
               cursor: "pointer",
               marginRight: "10px",
-              marginBottom: "10px"
+              marginBottom: "10px",
             }}
           />
           <Box
@@ -156,7 +200,7 @@ const Navbar = () => {
             sx={{
               height: { md: "4rem", lg: "5rem" },
               cursor: "pointer",
-              marginBottom: "10px"
+              marginBottom: "10px",
             }}
           />
           <Box
@@ -167,7 +211,7 @@ const Navbar = () => {
               justifyContent: "center",
               gap: isSmallScreen ? 1.5 : 4,
               alignItems: "center",
-              marginLeft: "30px"
+              marginLeft: "30px",
             }}
           >
             {navLinks.map((item, index) => (
@@ -192,7 +236,10 @@ const Navbar = () => {
                     bottom: 0,
                     width: "100%",
                     height: "2px",
-                    backgroundColor: activeLink === item.link ? "var(--primaryDarkColor)" : "transparent",
+                    backgroundColor:
+                      activeLink === item.link
+                        ? "var(--primaryDarkColor)"
+                        : "transparent",
                     transition: "background-color 0.3s ease-in-out",
                     fontFamily: '"Montserrat", "Sans-serif"',
                     fontWeight: "500",
@@ -221,5 +268,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

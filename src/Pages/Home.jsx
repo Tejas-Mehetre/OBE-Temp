@@ -72,6 +72,7 @@ function Home() {
             <TextField
               fullWidth
               placeholder="Enter Postcode"
+              variant="standard"
               sx={{
                 maxWidth: "400px",
                 margin: { xs: "10px 10px 0px 10px", md: "0px" },
