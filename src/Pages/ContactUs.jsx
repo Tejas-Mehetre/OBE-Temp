@@ -7,18 +7,12 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import ContactBg from "../../public/ContactBg.jpg";
 import SendIcon from "@mui/icons-material/Send";
 import {
-  AccountCircle,
   Edit,
-  Email,
   EmailOutlined,
-  Info,
   InfoOutlined,
-  Person,
   PersonOutline,
-  Phone,
   PhoneOutlined,
 } from "@mui/icons-material";
 
@@ -61,7 +55,7 @@ function ContactUs() {
         >
           <Typography
             sx={{
-              fontFamily: "BR Sonoma",
+              // fontFamily: "BR Sonoma",
               fontSize: { xs: "32px", sm: "40px", md: "48px", lg: "56px" },
               fontWeight: "500",
               lineHeight: "1.2",
@@ -209,6 +203,7 @@ function ContactUs() {
               fullWidth
               label="Subject"
               variant="standard"
+              sta
               InputLabelProps={{
                 shrink: false,
                 sx: { left: "30px", top: "-9px" },

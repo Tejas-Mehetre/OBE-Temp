@@ -367,7 +367,7 @@ const AboutUs = () => {
               variant="body2"
               sx={{
                 textTransform: "uppercase",
-                fontFamily: '"Inter", sans-serif',
+                // fontFamily: '"Inter", sans-serif',
               }}
             >
               Our Values
@@ -375,7 +375,7 @@ const AboutUs = () => {
             <Typography
               variant="h4"
               sx={{
-                fontFamily: '"Inter", sans-serif',
+                // fontFamily: '"Inter", sans-serif',
                 fontWeight: "bold",
                 color: "#ff3d47",
                 mt: 1,
@@ -388,7 +388,7 @@ const AboutUs = () => {
               sx={{
                 fontWeight: "bold",
                 color: "#333",
-                fontFamily: '"Inter", sans-serif',
+                // fontFamily: '"Inter", sans-serif',
               }}
             >
               For a Better Future

@@ -1,12 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
-import Vector1 from "../../public/Vector1.png";
-import Vector2 from "../../public/Vector2.png";
-import Vector3 from "../../public/Vector3.png";
-import Vector4 from "../../public/Vector4.png";
-import InfoIcon from "../../public/InfoIcon.png";
-import ServicesManWomen from "../../public/ServicesManWomen.jpg";
-import ServicesProfilePhoto from "../../public/ServicesProfilePhoto.jpg";
-import ServicesBox3 from "../../public/ServicesBox3.jpg";
+import Vector1 from "/Vector1.png";
+import Vector2 from "/Vector2.png";
+import Vector3 from "/Vector3.png";
+import Vector4 from "/Vector4.png";
+import InfoIcon from "/InfoIcon.png";
+import ServicesManWomen from "/ServicesManWomen.jpg";
+import ServicesProfilePhoto from "/ServicesProfilePhoto.jpg";
+import ServicesBox3 from "/ServicesBox3.jpg";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 
@@ -31,7 +31,7 @@ const Services = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundImage: "url(../../public/services_bg.jpg)",
+              backgroundImage: "url(/services_bg.jpg)",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
@@ -50,7 +50,7 @@ const Services = () => {
           >
             <Typography
               sx={{
-                fontFamily: "BR Sonoma",
+                // fontFamily: "BR Sonoma",
                 fontSize: { xs: "32px", sm: "40px", md: "48px", lg: "56px" },
                 fontWeight: "500",
                 lineHeight: "1.2",
@@ -96,7 +96,7 @@ const Services = () => {
               ></Box>
               <Typography
                 sx={{
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "24px",
                   lineHeight: "28.78px",
@@ -119,7 +119,7 @@ const Services = () => {
               ></Box>
               <Typography
                 sx={{
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "24px",
                   lineHeight: "28.78px",
@@ -142,7 +142,7 @@ const Services = () => {
               ></Box>
               <Typography
                 sx={{
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "24px",
                   lineHeight: "28.78px",
@@ -165,7 +165,7 @@ const Services = () => {
               ></Box>
               <Typography
                 sx={{
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "24px",
                   lineHeight: "28.78px",
@@ -183,7 +183,7 @@ const Services = () => {
               <Box sx={{ marginBottom: "1rem" }}>
                 <Typography
                   sx={{
-                    fontFamily: "Inter",
+                    // fontFamily: "Inter",
                     fontWeight: "500",
                     fontSize: { xs: "11px", sm: "12px", md: "13px" }, // Responsive text size
                     lineHeight: "18px",
@@ -227,7 +227,7 @@ const Services = () => {
                     alignItems: "flex-start",
                     gap: "8px",
                     mb: { xs: "8px", md: "10px" }, // Adjust margin spacing
-                    fontFamily: "BR Sonama",
+                    // fontFamily: "BR Sonama",
                     fontWeight: "400",
                     fontSize: { xs: "15px", sm: "16px", md: "17px" }, // Responsive font size
                     lineHeight: { xs: "24px", sm: "26px", md: "28px" },
@@ -249,7 +249,7 @@ const Services = () => {
                     alignItems: "flex-start",
                     gap: "8px",
                     mb: { xs: "8px", md: "10px" },
-                    fontFamily: "BR Sonama",
+                    // fontFamily: "BR Sonama",
                     fontWeight: "400",
                     fontSize: { xs: "15px", sm: "16px", md: "17px" },
                     lineHeight: { xs: "24px", sm: "26px", md: "28px" },
@@ -270,7 +270,7 @@ const Services = () => {
                     alignItems: "flex-start",
                     gap: "8px",
                     mb: { xs: "8px", md: "10px" },
-                    fontFamily: "BR Sonama",
+                    // fontFamily: "BR Sonama",
                     fontWeight: "400",
                     fontSize: { xs: "15px", sm: "16px", md: "17px" },
                     lineHeight: { xs: "24px", sm: "26px", md: "28px" },
@@ -292,7 +292,7 @@ const Services = () => {
                     alignItems: "flex-start",
                     gap: "8px",
                     mb: { xs: "8px", md: "10px" },
-                    fontFamily: "BR Sonama",
+                    // fontFamily: "BR Sonama",
                     fontWeight: "400",
                     fontSize: { xs: "15px", sm: "16px", md: "17px" },
                     lineHeight: { xs: "24px", sm: "26px", md: "28px" },
@@ -365,7 +365,7 @@ const Services = () => {
               >
                 <Typography
                   sx={{
-                    fontFamily: "Inter",
+                    // fontFamily: "Inter",
                     fontWeight: "500",
                     fontSize: { xs: "18px", sm: "24px", md: "28px" }, // Responsive font size
                     lineHeight: { xs: "22px", sm: "28px", md: "32px" },
@@ -421,7 +421,7 @@ const Services = () => {
             <Typography
               sx={{
                 color: "#FAFCFA",
-                fontFamily: "BR Sonama",
+                // fontFamily: "BR Sonama",
                 fontWeight: "700",
                 fontSize: { xs: "12px", sm: "14px" },
                 lineHeight: "18px",
@@ -434,7 +434,7 @@ const Services = () => {
             <Typography
               sx={{
                 color: "#FAFCFA",
-                fontFamily: "BR Sonama",
+                // fontFamily: "BR Sonama",
                 fontWeight: "700",
                 fontSize: { xs: "36px", sm: "57px" },
                 lineHeight: { xs: "40px", sm: "62px" },
@@ -452,7 +452,7 @@ const Services = () => {
                 borderRadius: "100px",
                 width: { xs: "160px", sm: "201px" },
                 height: { xs: "48px", sm: "56px" },
-                fontFamily: "BR Sonama",
+                // fontFamily: "BR Sonama",
                 fontWeight: "700",
                 fontSize: { xs: "16px", sm: "18px" },
                 lineHeight: "48px",
@@ -472,7 +472,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#000000",
-                  fontFamily: "BR Sonama",
+                  // fontFamily: "BR Sonama",
                   fontWeight: "700",
                   fontSize: "14px",
                   lineHeight: "18px",
@@ -486,7 +486,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#000000",
-                  fontFamily: "BR Sonama",
+                  // fontFamily: "BR Sonama",
                   fontWeight: "700",
                   fontSize: "57px",
                   lineHeight: "62px",
@@ -498,7 +498,7 @@ const Services = () => {
                   component="span"
                   sx={{
                     color: "var(--primaryDarkColor)",
-                    fontFamily: "BR Sonama",
+                    // fontFamily: "BR Sonama",
                     fontWeight: "700",
                     fontSize: "57px",
                     lineHeight: "62px",
@@ -513,7 +513,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#54655E",
-                  fontFamily: "BR Sonama",
+                  // fontFamily: "BR Sonama",
                   fontWeight: "400",
                   fontSize: "17px",
                   lineHeight: "28px",
@@ -542,7 +542,7 @@ const Services = () => {
                   <Typography
                     sx={{
                       color: "var(--primaryDarkColor)",
-                      fontFamily: "BR Sonama",
+                      // fontFamily: "BR Sonama",
                       fontWeight: "500",
                       fontSize: "24px",
                       lineHeight: "34px",
@@ -554,7 +554,7 @@ const Services = () => {
                   <Typography
                     sx={{
                       color: "#54655E",
-                      fontFamily: "BR Sonama",
+                      // fontFamily: "BR Sonama",
                       fontWeight: "400",
                       fontSize: "16px",
                       lineHeight: "18px",
@@ -581,7 +581,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#54655E",
-                  fontFamily: "BR Sonama",
+                  // fontFamily: "BR Sonama",
                   fontWeight: "400",
                   fontSize: "17px",
                   lineHeight: "28px",
@@ -596,7 +596,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#54655E",
-                  fontFamily: "BR Sonama",
+                  // fontFamily: "BR Sonama",
                   fontWeight: "400",
                   fontSize: "17px",
                   lineHeight: "28px",
@@ -618,7 +618,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#FFFFFF",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   position: "absolute",
                   marginTop: "2.5rem",
                   marginLeft: "1.5rem",
@@ -653,7 +653,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#FFFFFF",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   position: "absolute",
                   marginTop: "2.5rem",
                   marginLeft: "1.5rem",
@@ -688,7 +688,7 @@ const Services = () => {
               <Typography
                 sx={{
                   color: "#FFFFFF",
-                  fontFamily: "Inter",
+                  // fontFamily: "Inter",
                   position: "absolute",
                   marginTop: "2.5rem",
                   marginLeft: "1.5rem",

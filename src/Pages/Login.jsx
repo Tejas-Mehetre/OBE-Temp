@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid2";
 import { Box, Button, Typography } from "@mui/material";
-import LoginBg from "../../public/LoginBg.jpg";
+import LoginBg from "/LoginBg.jpg";
 
 function Login() {
   return (
@@ -35,7 +35,7 @@ function Login() {
           >
             <Typography
               sx={{
-                fontFamily: "BR Sonoma",
+                // fontFamily: "BR Sonoma",
                 fontWeight: "600",
                 fontSize: "20px",
                 lineHeight: "100%",
@@ -45,7 +45,7 @@ function Login() {
             </Typography>
             <Typography
               sx={{
-                fontFamily: "BR Sonoma",
+                // fontFamily: "BR Sonoma",
                 fontWeight: "400",
                 fontSize: "16px",
               }}
@@ -55,7 +55,7 @@ function Login() {
             </Typography>
             <Typography
               sx={{
-                fontFamily: "BR Sonoma",
+                // fontFamily: "BR Sonoma",
                 fontWeight: "400",
                 fontSize: "16px",
               }}
@@ -74,7 +74,7 @@ function Login() {
                   gap: "10px",
                   backgroundColor: "var(--primaryDarkColor)",
                   color: "#FFFFFF",
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "14px",
                 }}
@@ -90,7 +90,7 @@ function Login() {
                   gap: "10px",
                   color: "#1c1c1c",
                   border: "1px solid",
-                  fontFamily: "BR Sonoma",
+                  // fontFamily: "BR Sonoma",
                   fontWeight: "500",
                   fontSize: "14px",
                 }}

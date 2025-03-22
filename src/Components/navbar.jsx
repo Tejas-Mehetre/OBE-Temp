@@ -241,7 +241,7 @@ const Navbar = () => {
                         ? "var(--primaryDarkColor)"
                         : "transparent",
                     transition: "background-color 0.3s ease-in-out",
-                    fontFamily: '"Montserrat", "Sans-serif"',
+                    // fontFamily: '"Montserrat", "Sans-serif"',
                     fontWeight: "500",
                     fontSize: "15px",
                     textTransform: "uppercase",
